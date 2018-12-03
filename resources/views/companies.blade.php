@@ -4,9 +4,17 @@
 <div class="album text-muted">
     <div class="container">
         @include('flash::message')
-        <div class="row">
-            <h1>Companies</h1>
-            <a href="{{route('company-new')}}" class="btn btn-primary">Add</a>
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-3">
+                    <h1>Companies</h1>
+                </div>
+                <div class="col-sm-3">
+                    <a href="{{route('company-new')}}" class="btn btn-primary">Add</a>
+                </div>
+
+            </div>
         </div>
         <table class="table table-striped">
             <thead>

@@ -4,8 +4,19 @@
 <div class="album text-muted">
     <div class="container">
         @include('flash::message')
-        <h1>Users</h1>
-         <a href="{{route('user-new')}}" class="btn btn-primary">Add</a>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-3">
+                    <h1>Users</h1>
+                </div>
+                <div class="col-sm-3">
+                    <a href="{{route('user-new')}}" class="btn btn-primary">Add</a>
+                </div>
+
+            </div>
+        </div>
+
+
         <table class="table table-striped">
             <thead>
                 <tr>

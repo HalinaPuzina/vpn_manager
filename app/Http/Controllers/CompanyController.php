@@ -42,11 +42,12 @@ class CompanyController extends Controller
         $company = Company::find($id);
         return view('company-edit', ['company' => $company]);
     }
-    
+
     /*
      * new company
      */
-        public function newCompany()
+
+    public function newCompany()
     {
         return view('company-create');
     }
@@ -113,7 +114,7 @@ class CompanyController extends Controller
      * @param int $id
      * @return json
      */
-    public function delete( $id)
+    public function delete($id)
     {
         $company = Company::find($id);
         if (!$company) {
@@ -122,6 +123,20 @@ class CompanyController extends Controller
         $company->delete();
 
         return response()->json(null, 204);
+    }
+
+    /*
+     * List all company users
+     * 
+     */
+
+    public function companiesUsers($id)
+    {
+        $company = Company::find($id);
+        if (!$company) {
+            return response()->json('This company does not exist', 404);
+        }
+        return response()->json($company->users,200);
     }
 
 }

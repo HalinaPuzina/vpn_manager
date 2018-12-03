@@ -34,4 +34,5 @@ Route::get('companies/delete/{id}', 'AjaxController@deleteCompany')->name('delet
 Route::put('users/{id}', 'AjaxController@updateUser')->name('update-user');
 Route::post('users/create', 'AjaxController@createUser')->name('create-user');
 Route::get('users/delete/{id}', 'AjaxController@deleteUser')->name('delete-user');
-
+//
+Route::get('report/list', 'AjaxController@report')->name('report-list');

@@ -59,8 +59,7 @@ class AjaxController extends Controller
         }
         return back();
     }
-    
-    
+
     public function updateUser(Request $request, $id)
     {
 
@@ -77,7 +76,7 @@ class AjaxController extends Controller
         }
         return back();
     }
-    
+
     public function createUser(Request $request)
     {
 
@@ -94,8 +93,8 @@ class AjaxController extends Controller
         }
         return back();
     }
-    
-        public function deleteUser(Request $request, $id)
+
+    public function deleteUser(Request $request, $id)
     {
         $client = new \GuzzleHttp\Client();
         $response = $client->request('DELETE', $request->root() . '/api/users/' . $id, [
@@ -105,6 +104,23 @@ class AjaxController extends Controller
         $res = $response->getStatusCode();
         if ($res == 204) {
             flash('Succsess');
+        } else {
+            flash($response->getBody()->getContents());
+        }
+        return back();
+    }
+
+    public function report(Request $request)
+    {
+
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('POST', $request->root() . '/api/report', [
+            'form_params' => $request->all()
+        ]);
+        $res = $response->getStatusCode();
+        if ($res == 200) {
+            $companies = \GuzzleHttp\json_decode($response->getBody()->getContents());
+            return view('report', ['companies' => $companies]);
         } else {
             flash($response->getBody()->getContents());
         }
