@@ -9,7 +9,7 @@
             </div>
             <div class="row justify-content-md-center">
                 <div class="col-md-2">
-                    <a href="{{route('companies-list')}}" class="btn btn-primary">Generate data</a>
+                    <a href="{{route('generate')}}" class="btn btn-primary">Generate data</a>
                 </div>
                 <div class="col-md-2">
 

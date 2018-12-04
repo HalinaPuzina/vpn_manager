@@ -127,4 +127,19 @@ class AjaxController extends Controller
         return back();
     }
 
+    public function generate(Request $request)
+    {
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('GET', $request->root() . '/api/generate', [
+            'form_params' => []
+        ]);
+        $res = $response->getStatusCode();
+        if ($res == 200) {
+            flash('Succsess');
+        } else {
+            flash($response->getBody()->getContents());
+        }
+        return back();
+    }
+
 }
