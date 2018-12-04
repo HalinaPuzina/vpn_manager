@@ -34,6 +34,7 @@
         </div>
         <div class="container">
             @if(count($companies))
+            <div class="row"><h1>Report for {{request()->input('date')}}</h1></div>
             <table class="table table-striped">
                 <thead>
                     <tr>
