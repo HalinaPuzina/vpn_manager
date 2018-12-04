@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\User;
 use Validator;
+use Carbon\Carbon;
 
 /**
  * Class CompanyController
@@ -137,6 +139,23 @@ class CompanyController extends Controller
             return response()->json('This company does not exist', 404);
         }
         return response()->json($company->users,200);
+    }
+    
+    public function users($id)
+    {
+       $company = Company::find($id);
+       if (!$company) {
+            return false;
+        }
+        $date = request()->input('date');
+        $month = Carbon::parse($date)->month;
+        $year =  Carbon::parse($date)->year;
+        $users = new User();
+        $users->setMonth($month);
+        $users->setYear($year);
+        $result = $users->transferredLog($id);
+        //dd($result);
+        return view('company-users', ['users' => $result]);
     }
 
 }

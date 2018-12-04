@@ -23,7 +23,7 @@ class ReportController extends Controller
     public function index(Request $request)
     {
         $validator = Validator::make($request->all(), [
-                    'date' => 'required|date|date_format:Y-m-d',
+                    'date' => 'required|date|date_format:Y-m',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->messages(), 400);

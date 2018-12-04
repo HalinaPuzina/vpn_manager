@@ -20,6 +20,7 @@ Route::get('/', 'IndexController@index')->name('home');
 Route::get('companies', 'CompanyController@lists')->name('companies-list');
 Route::get('companies/edit/{id}', 'CompanyController@edit')->name('company-edit');
 Route::get('companies/new', 'CompanyController@newCompany')->name('company-new');
+Route::get('companies-users/{id}', 'CompanyController@users')->name('company-users');
 //
 Route::get('users', ['as' => 'users-list', 'uses' => 'UserController@lists']);
 Route::get('users/edit/{id}', 'UserController@edit')->name('user-edit');

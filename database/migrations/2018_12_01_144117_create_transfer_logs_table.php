@@ -18,7 +18,7 @@ class CreateTransferLogsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('resource')->nullable();
-            $table->integer('transferred')->nullable();
+            $table->bigInteger('transferred')->nullable();
         });
     }
 

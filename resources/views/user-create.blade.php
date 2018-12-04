@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="qouta">E-mail</label>
-                <input type="text" class="form-control" id="qouta" name="email" placeholder="" value="" required="">
+                <input type="text" type="email" class="form-control" id="qouta" name="email" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                     {{$errors->first('email')}}
                 </div>

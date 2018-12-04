@@ -19,7 +19,7 @@ Route::get('companies/{id}', 'CompanyController@show');
 Route::post('companies/create', 'CompanyController@create');
 Route::put('companies/{id}', 'CompanyController@update');
 Route::delete('companies/{id}', 'CompanyController@delete');
-Route::get('companies/{id}', 'CompanyController@companiesUsers');
+Route::get('companies-users/{id}', 'CompanyController@companiesUsers');
 //users
 Route::get('users', 'UserController@index');
 Route::get('users/{id}', 'UserController@show');

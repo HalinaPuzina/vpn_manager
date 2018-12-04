@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label for="qouta">Quota</label>
+                    <label for="qouta">Quota, bytes</label>
                     <input type="text" class="form-control" id="qouta" name="qouta" placeholder="" value="" required="">
                     <div class="invalid-feedback">
                         {{$errors->first('qouta')}}

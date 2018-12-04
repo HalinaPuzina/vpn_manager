@@ -49,9 +49,9 @@
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td> {{$company->name}}</td>
-                        <td>{{$company->used}}</td>
-                        <td>{{$company->qouta}}</td>
-                        <td></td>
+                        <td>{{formatBytes($company->used)}}</td>
+                        <td>{{formatBytes($company->qouta)}}</td>
+                        <td><a href="{{url('companies-users/'.$company->id.'?date='.request()->input('date'))}}">See More</a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -65,7 +65,7 @@
 <script type="text/javascript">
     $('#datepicker').datepicker({
         autoclose: true,
-        format: 'yyyy-mm-dd'
+        format: 'yyyy-mm'
     });
 
 </script>
