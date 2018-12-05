@@ -74,7 +74,7 @@ class CompanyController extends Controller
     {
         $validator = Validator::make($request->all(), [
                     'name' => 'required|max:255',
-                    'qouta' => 'required',
+                    'qouta' => 'required|numeric',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->messages(), 400);
@@ -95,7 +95,7 @@ class CompanyController extends Controller
     {
         $validator = Validator::make($request->all(), [
                     'name' => 'required|max:255',
-                    'qouta' => 'required',
+                    'qouta' => 'required|numeric',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->messages(), 400);

@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(CompanyTableSeeder::class);
         $this->call(UsersTableSeeder::class);
-        $this->call(TransferLogTableSeeder::class);
     }
 
 }
